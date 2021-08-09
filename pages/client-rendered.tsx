@@ -1,6 +1,9 @@
+import { GetStaticProps } from "next";
+import useTranslation from "next-translate/useTranslation";
 import { useQuery } from "react-query";
 
 export default function ClientRendered() {
+  const { t } = useTranslation("clientRendered");
   const { data, isLoading, isSuccess } = useQuery(
     ["Character", { characterId: 1 }],
     () =>
@@ -9,7 +12,7 @@ export default function ClientRendered() {
 
   return (
     <div>
-      <p>This data is fetched via the client</p>
+      <p>{t("description")}</p>
       <pre>
         {isLoading && <p>Loading....</p>}
         {isSuccess && JSON.stringify(data, null, 2)}

@@ -2,8 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Home() {
+  const { t } = useTranslation("home");
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,17 +16,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Next.js!</h1>
+        <h1 className={styles.title}>{t("welcome")}</h1>
 
         <ul className={styles.list}>
           <li>
-            <Link href="/server-rendered">Server Rendered</Link>
+            <Link href="/server-rendered">{t("serverRendered")}</Link>
           </li>
           <li>
-            <Link href="/client-rendered">Client Rendered</Link>
+            <Link href="/client-rendered">{t("clientRendered")}</Link>
           </li>
           <li>
-            <Link href="/api-request">API Request</Link>
+            <Link href="/api-request">{t("apiRequest")}</Link>
           </li>
         </ul>
       </main>

@@ -1,0 +1,6 @@
+{
+  "welcome": "¡Bienvenido a Next.js!",
+  "serverRendered": "Servidor renderizado",
+  "clientRendered": "Cliente renderizado",
+  "apiRequest": "Solicitud de API"
+}
